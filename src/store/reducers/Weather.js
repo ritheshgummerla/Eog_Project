@@ -42,10 +42,13 @@ const weatherDataRecevied = (state, action) => {
   };
 };
 
+
+
 const handlers = {
   [actions.FETCH_WEATHER]: startLoading,
   [actions.WEATHER_ID_RECEIVED]: weatherIDReceived,
-  [actions.WEATHER_DATA_RECEIVED]: weatherDataRecevied
+  [actions.WEATHER_DATA_RECEIVED]: weatherDataRecevied,
+  
 };
 
 export default (state = initialState, action) => {

@@ -6,7 +6,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import { withStyles } from "@material-ui/core/styles";
-import AvatarRaw from "@material-ui/core/Avatar";
+import { Link } from 'react-router-dom';
 
 const cardStyles = theme => ({
   root: {
@@ -17,49 +17,33 @@ const cardStyles = theme => ({
   }
 });
 const CardHeader = withStyles(cardStyles)(CardHeaderRaw);
-
-const avatarStyles = theme => ({
-  root: {
-    background: theme.palette.primary.main
-  },
-  title: {
-    color: "white"
-  }
-});
-const Avatar = withStyles(avatarStyles)(AvatarRaw);
-
 const styles = {
   card: {
-    margin: "5% 25%"
+    margin: "5% 15%"
   }
 };
 
 const NowWhat = props => {
   const { classes } = props;
   return (
+    <div>
     <Card className={classes.card}>
-      <CardHeader title="OK, rithesh, you're all setup. Now What?" />
+      <CardHeader title="Assessments" />
       <CardContent>
         <List>
           <ListItem>
-            <Avatar>1</Avatar>
-            <ListItemText primary="Connect to the Drone API" />
+           <Link to='/drone'> <ListItemText primary="Dashboard" /></Link>
           </ListItem>
           <ListItem>
-            <Avatar>2</Avatar>
-            <ListItemText primary="Create your Visualization" />
+           <Link to='/chart'> <ListItemText primary="Chart" /></Link>
           </ListItem>
           <ListItem>
-            <Avatar>3</Avatar>
-            <ListItemText primary="Poll the API" />
-          </ListItem>
-          <ListItem>
-            <Avatar>4</Avatar>
-            <ListItemText primary="Submit Your App" />
+           <Link to='/map'> <ListItemText primary="Map" /></Link>
           </ListItem>
         </List>
       </CardContent>
     </Card>
+    </div>
   );
 };
 
